@@ -42,8 +42,8 @@ BOT_USERNAME: str | None = None
 BOT_DISPLAY: str | None = None
 BOT_ID: int | None = None
 
-MAX_SNIPPET_LEN = int(os.getenv("MAX_SNIPPET_LEN", "160"))
-MESSAGE_HISTORY_LIMIT = int(os.getenv("MESSAGE_LIMIT", "30"))
+MAX_SNIPPET_LEN = int(os.getenv("MAX_SNIPPET_LEN"))
+MESSAGE_HISTORY_LIMIT = int(os.getenv("MESSAGE_LIMIT"))
 
 # Rolling history dictionary (recent messages in the chat):
 _HISTORY: Dict[int, Deque[Tuple[bool, str]]] = defaultdict(lambda: deque(maxlen=MESSAGE_HISTORY_LIMIT))
